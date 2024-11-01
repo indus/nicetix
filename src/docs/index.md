@@ -126,9 +126,13 @@ scalebar component)</small>
   --label-offset:-22px;
   --tick-size:20;
   --tick-offset:-6px;
-  --tick-size0:28;
+  --tick-size0:24;
   --tick-offset0:0;
-  --tick-color0: #fff;
+  --tick-color0: var(--vp-c-text-2);
+}
+
+#sb1 {
+  --tick-color0: transparent;
 }
 
 small {

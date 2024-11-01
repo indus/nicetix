@@ -16,4 +16,15 @@
             }
         }
     }
+
+    .VPFeatures {
+        h2 {
+            font-weight: 700;
+        }
+
+        strong {
+            font-weight: 700;
+            color: var(--vp-c-text-1);
+        }
+    }
 }
