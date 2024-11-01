@@ -29,8 +29,8 @@ $ npm install nicetix
 import nicetix from "nicetix";
 // nicetix(min, max, <num = 5>)
 
-let ticks = nicetix(-1.23, 12.3, 5);
-// -> [-5, 0, 5, 10, 15]
+let ticks = nicetix(-1.23, 12.3, 7);
+//-> [-2.5, 0, 2.5, 5, 7.5, 10, 12.5]
 ```
 
 <script setup>
@@ -42,12 +42,12 @@ import dvScalebar from "dv-scalebar/sfc"
 import nicetix from "../nicetix.ts";
 
 const tp = useTemplateRef('tp');
-const ticks = ref([1,2,34]);
-const classes = ref([0,0.1,0.9,1]);
+const ticks = ref([]);
+const classes = ref([]);
 
 const PARAMS = {
   range: {min: -1.23, max: 12.3},
-  num: 5
+  num: 7
 };
 
 const update = ()=>{
@@ -88,20 +88,25 @@ onMounted(() => {
 
 })
 </script>
-<hr>
+
 <div class="row">
 <div id="tp" ref="tp"></div>
 <div id="sb">
-<dv-scalebar id="sb0" colors="hotpink,#00000088,hotpink" :classes="classes" labels=",min,max," ticks/>
+<dv-scalebar id="sb0" colors="hotpink,#8888,hotpink" :classes="classes" labels=",min,max," ticks/>
 <dv-scalebar id="sb1" colors="transparent,transparent" :labels="ticks" ticks/>
 </div>
 </div>
+
+<small>(The scalebar in this example was created with
+[dv-scalebar](https://dv-scalebar.js.org/), a versatile framework-agnostic
+scalebar component)</small>
 
 <style>
 .row {
   display:flex;
   flex-flow:wrap;
   gap:3em;
+  margin-top:3em;
 }
 
 #tp {
@@ -112,6 +117,7 @@ onMounted(() => {
   align-content: center;
   position:relative;
   flex-grow:1;
+  margin-top:1em;
 }
 
 #sb0 {
@@ -123,6 +129,26 @@ onMounted(() => {
   --tick-size0:28;
   --tick-offset0:0;
   --tick-color0: #fff;
+}
+
+small {
+  display:block;
+  margin-top:2em;
+  font-size:.7em;
+  line-height:1;
+  text-align:left;
+  @media (min-width: 700px) {
+  text-align:right;
+  }
+}
+
+.tp-rotv {
+  font-size: 1em !important;
+  --tp-container-unit-size:30px;
+  --tp-label-foreground-color:currentColor;
+  --tp-input-foreground-color:currentColor;
+  --tp-input-background-color: #0002;
+  --tp-base-background-color: var(--vp-c-bg-soft);
 }
 
 </style>

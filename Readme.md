@@ -12,6 +12,6 @@ $ npm install nicetix
 import nicetix from "nicetix";
 // nicetix(min, max, <num = 5>)
 
-let ticks = nicetix(-1.23, 12.3, 5);
-// -> [-5, 0, 5, 10, 15]
+let ticks = nicetix(-1.23, 12.3, 7);
+//-> [-2.5, 0, 2.5, 5, 7.5, 10, 12.5]
 ```
