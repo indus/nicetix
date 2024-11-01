@@ -1,0 +1,48 @@
+{
+  "name": "nicetix",
+  "private": false,
+  "author": "Stefan Keim (https://github.com/indus)",
+  "homepage": "nicetix.js.org",
+  "license": "BSD-3-Clause",
+  "version": "0.1.0",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/indus/nicetix"
+  },
+  "keywords": [
+    "scalebar",
+    "chart",
+    "graph",
+    "numbers"
+  ],
+  "main": "./dist/nicetix.umd.cjs",
+  "types": "./dist/nicetix.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/nicetix.js",
+      "require": "./dist/nicetix.umd.cjs",
+      "types": "./dist/nicetix.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc && vite build",
+    "docs:dev": "vitepress dev src/docs",
+    "docs:build": "vitepress build src/docs",
+    "docs:preview": "vitepress preview src/docs"
+  },
+  "devDependencies": {
+    "@tweakpane/core": "^2.0.4",
+    "rollup-plugin-license": "^3.5.3",
+    "sass-embedded": "^1.80.5",
+    "typescript": "~5.6.2",
+    "vite": "^5.4.10",
+    "vite-plugin-dts": "^4.3.0",
+    "vitepress": "^1.4.3"
+  },
+  "dependencies": {
+    "@tweakpane/plugin-essentials": "^0.2.1",
+    "dv-scalebar": "^0.1.5",
+    "tweakpane": "^4.0.4"
+  }
+}
